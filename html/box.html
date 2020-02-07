@@ -1,0 +1,222 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="z-index: 1500;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">確認</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="キャンセル">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"style="z-index: 10;">
+          コンフィグを生成して実際にドローンを飛行させますか？
+          <?php include('common/php/hantei.php'); ?>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+          
+          <div id="run">
+          <button type="button" class="btn btn-secondary" id="runb" data-toggle="modal" data-target="#exampleModalScrollable" >コンフィグを見る</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable2" data-dismiss="modal">実行</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="progress">
+                <?php include('common/php/progress.php'); ?>
+                
+              </div>
+
+          生成されたコンフィグを送信しています。
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</form>
+
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalScrollableTitle">コンフィグファイル</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+      <textarea  class="form-control" id="one"  rows="27" style="height: 100%;"><?=escape1($moji1)?></textarea>
+      
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+    <!--<button type="button" class="btn btn-primary">保存して実行</button>-->
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="box20">
+<div class="box3">
+<form>
+<div class="row">
+<div class="col">
+<div style="width: 50%; float: left;" class="form-group">
+  <label for="exampleFormControlTextarea1"><h3>生成されたコンフィグ</h3></label>
+  <textarea  class="form-control" id="one" rows="10"><?php include('adrone_config/config.py'); ?></textarea>
+</div>
+
+  <div style="width: 50%; float: left;" class="form-group">
+    <label for="exampleFormControlTextarea1"><h3>RaspberryPiログ</h3></label>
+    <textarea class="form-control js-auto-scroll message-area" id="three" rows="10"><?php include('/home/fujitsu/a.log'); ?>
+    [system] 接続に失敗しました。 0x0032a
+    </textarea>
+  </div>
+  
+
+
+</div>
+</div>
+</form>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    //自動スクロール
+    //メッセージエリアのDOMを変数に格納
+    
+
+var psconsole = $('#one');
+if(psconsole.length)
+psconsole.scrollTop(psconsole[0].scrollHeight - psconsole.height());
+
+var psconsole = $('#two');
+if(psconsole.length)
+psconsole.scrollTop(psconsole[0].scrollHeight - psconsole.height());
+
+var psconsole = $('#three');
+if(psconsole.length)
+psconsole.scrollTop(psconsole[0].scrollHeight - psconsole.height());
+
+</script>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="box1">
+  <div class="box2" >
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options[0]1" id="option1" value="left" autocomplete="off" checked> 左
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options[0]1" id="option2" value="forward" autocomplete="off"> 前
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options[0]1" id="option3" value="back" autocomplete="off"> 後
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options[0]1" id="option3" value="right" autocomplete="off"> 右
+  </label>
+</div>
+
+
+
+に
+</div>
+
+<div class="box2">
+  <div class="box"　>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio" name="options[0]2" id="option1" value="1" autocomplete="off" checked> 1
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options[0]2" id="option2" value="2" autocomplete="off"> 2
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options[0]2" id="option3" value="3" autocomplete="off"> 3
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options[0]2" id="option3" value="4" autocomplete="off"> 4
+      </label>
+    </div>
+    秒
+      <input type="checkbox" name="options[0]2" id="option3" value="4" autocomplete="off"> 撮影ポイント
+  </div>
+  
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="box1"><div class="box2"><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-secondary active"><input type="radio" name="options1" id="option1" value="left" autocomplete="off" checked> 左</label><label class="btn btn-secondary"><input type="radio" name="options1" id="option2" value="forward" autocomplete="off"> 前</label><label class="btn btn-secondary"><input type="radio" name="options1" id="option3" value="back" autocomplete="off"> 後</label><label class="btn btn-secondary"><input type="radio" name="options1" id="option3" value="right" autocomplete="off"> 右</label></div>に</div><div class="box2"><div class="box"　><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-secondary active"><input type="radio" name="options2" id="option1" value="1" autocomplete="off" checked> 1</label><label class="btn btn-secondary"><input type="radio" name="options2" id="option2" value="2" autocomplete="off"> 2</label><label class="btn btn-secondary"><input type="radio" name="options2" id="option3" value="3" autocomplete="off"> 3</label><label class="btn btn-secondary"><input type="radio" name="options2" id="option3" value="4" autocomplete="off"> 4</label></div>秒</div></div></div>
+
+
+
+$i = 0;
+while(true){
+    
+    array_push($moji,$_POST['options1[1]']);
+
+    
+    $i++;
+    if($i==10){
+        break;
+        echo $moji[0];
+    }
+}
+
+$FP = fopen("/var/www/html/mirai/drone/drone_config/server1.log","w");
+        if(strpos($moji1,'back') !== false){
+            //'abcd'のなかに'bc'が含まれている場合
+            echo "back";
+            fwrite($FP,"running");
+        }else{
+            echo "失敗";
+            echo $moji+$i;
+            fwrite($FP,"stop");
+        }
+        
+    fclose($f);
+    fclose($FP);

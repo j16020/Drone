@@ -1,0 +1,73 @@
+
+     <div class="box20"style="width:50%;">
+      <div class="modal-content box3" >
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"style="font-size:1.5rem;">確認</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="キャンセル">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"style="z-index: 10;color:white;font-size:1.8rem;"style="widows: 50%;">
+          コンフィグを生成して実際にドローンを飛行させますか？
+          
+        </div>
+        <div class="modal-footer">
+          <form method="POST" action="run.php" >
+              <div id="run"style="border-color: teal;">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="location.href='flight.php'">戻る</button>
+          
+         
+          <button type="button" class="btn btn-secondary" id="runb" data-toggle="modal" data-target="#exampleModalScrollable" >コンフィグを見る</button>
+         
+          <button type="submit" name="run" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable2" data-dismiss="modal">実行</button>
+              </div>
+        </form>
+        </div>
+        </div>
+      </div>
+    </div> 
+    <div class="modal fade bd-example-modal-xl" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+          <div class="modal-content box3">
+            <div class="modal-header">
+              <h5 class="modal-title" style="font-size:1.8rem;"id="exampleModalScrollableTitle">生成されたコンフィグファイル</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+  
+                <textarea  class="form-control" id="one"  rows="27" style="height: 100%;"> <?php include('drone_config/create.py'); ?></textarea>
+                
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              <!--<button type="button" class="btn btn-primary">保存して実行</button>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="progress">
+                    <?php include('common/php/progress.php'); ?>
+                    
+                  </div>
+    
+              生成されたコンフィグを送信しています。
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,53 @@
+<div class="box20">
+<button type="button" class="but3"  data-toggle="modal" data-target="#exampleModal"onclick="func1();">
+        <h3>実行</h3> 
+       </button>
+     </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="z-index: 1500;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">確認</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="キャンセル">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body"style="z-index: 10;">
+              コンフィグを生成して実際にドローンを飛行させますか？
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+              
+              <div id="run">
+              <button type="button" class="btn btn-secondary" id="runb" data-toggle="modal" data-target="#exampleModalScrollable" >コンフィグを見る</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable2" data-dismiss="modal">実行</button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="progress">
+                    <?php include('common/php/progress.php'); ?>
+                    
+                  </div>
+    
+              生成されたコンフィグを送信しています。
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
